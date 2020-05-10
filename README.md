@@ -1,12 +1,12 @@
-# YAML to documentary
+# yaml2doc (YAML to document)
 
 ## Introduction
 
+Convert YAML to documentation. Useful for specifying specs or examples.
 
 ## Requirements
-```
-pip3 install -r requirements.txt
-```
+
+Relies on the amazing [pandoc](pandoc.org) for the document conversion. It will however run as a pure python yaml to markdown converter without pandoc (as it converts to md and then to pandoc)
 
 ## Setup
 
@@ -17,7 +17,7 @@ pip3 install .
 Once installed the package can be used from the commandline
 
 ```
-usage: px_import -b BLUEPRINT.yaml
+usage: yamltodoc <infile.yaml> <outfile.[md|pdf|docx|pptx]>
 
 ```
 
@@ -25,6 +25,7 @@ The following will build an example report with the files in the "test" director
 
 eg:
 ```sh
-px_import -b px_import/blueprint.yaml 
+yamltodoc test/blueprint.yaml blueprint.pdf 
 ```
+
 
