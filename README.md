@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Convert YAML to documentation. Useful for specifying specs or examples.
+Convert YAML to documentation. 
+
+Particularly useful for documenting specifications or examples.
 
 ## Requirements
 
