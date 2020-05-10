@@ -10,6 +10,12 @@ Particularly useful for documenting specifications or examples.
 
 Relies on the amazing [pandoc](pandoc.org) for the document conversion. It will however run as a pure python yaml to markdown converter without pandoc (as it converts to md and then to pandoc)
 
+## How to use
+
+This script takes all lines beginning with # as text-lines. All other lines are treated as “yaml”. 
+
+For each text the # is removed and the “code” will get spaces prepended.
+
 ## Setup
 
 pip3 install .
