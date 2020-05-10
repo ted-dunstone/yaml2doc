@@ -1,0 +1,116 @@
+# % Performix ETL Spec
+# % 10 May 2020
+
+# # Performix blueprint 
+#
+# Blueprint description for Performix data bundling
+#
+# Created for Performixi
+#
+# * Item 1
+# * Item 2
+#
+# YAML validation: 
+
+version: "0.5"
+
+metadata:
+    about:
+        title: Blueprint Test
+        subtitle: Draft Performix Analysis
+        description: |
+            An analysis data
+        email: ted@biometix.com
+
+# # Define the variables
+variables:
+    match_file: -00000000*.csv
+    quality_file: quality_scores.csv
+    enrolment_file: enrolments.csv
+    users_file: user_guids.csv
+
+
+# # Define the sources
+sources:
+    match:
+        filename: {match_file}  #note: the match name a longer comment in the margins of this section
+        enabled: True # set this to enable
+        conpressed: True
+        columns:
+            pid: guid1
+            gid: guid2
+            instance: finger
+            score: comparisonScore
+            truth: False
+        stats:
+            - histogram_bin:
+                threshold: 0
+                col_num: score
+                bin: 5
+                identifier: matches
+        preprocessing:
+            - above_thresh: 
+                enabled: True
+                threshold: 25
+                col_num: score
+            - python_transform:
+                enabled: True
+            - sort:
+                col_pid: pid
+                col_score: score
+            - python_transform:
+                enabled: True
+                                          
+
+        checks:
+            blah: balh
+    
+    quality:
+        enabled: True
+        filename: {quality_file}
+        columns:
+            pid: guid1
+            quality: quality
+            instance: finger
+        stats:
+            - histogram_bin:
+                threshold: 0
+                col_num: quality
+                bin: 3
+                identifier: quality
+        preprocessing:
+            - below_thresh: 
+                enabled: True
+                threshold: 30
+                col_num: quality
+
+    enrolment:
+        enabled: True
+        filename: {enrolment_file}
+        columns:
+            pid: guid
+            enrollerid: pseudoUserId
+            location: pseudoModuleId
+            time: enrolmentTime
+        stats:
+            - histogram:
+                col_num: enrollerid
+                identifier: enrollerid
+            - histogram:
+                col_num: location
+                identifier: location
+        preprocessing:
+            - python_transform:
+                enabled: False
+  
+    users:
+        enabled: True
+        filename: {users_file}
+        columns:
+            pid: guid
+            enrollerid: pseudoUserId
+        preprocessing:
+    
+
+
+        

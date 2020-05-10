@@ -1,0 +1,5 @@
+/* Copyright (C) Biometix Pty Ltd  - All Rights Reserved
+ * Unauthorized copying of this project,  via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Please contact <support@biometix.com>, May 2020 
+ */
