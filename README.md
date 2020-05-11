@@ -4,7 +4,13 @@
 
 Convert YAML to documentation. 
 
-Particularly useful for documenting specifications or examples.
+Particularly useful for documenting specifications or examples. Features:
+
+- Easily document your YAML
+- Convert to md,pdf,docx even pptx (anything supported by pandoc)
+- For pdf add left side margin notes
+- Through pandoc support allow title,date,author .. 
+- Validates YAML using pyyaml - can insert validation date and status in documentation
 
 ## Requirements
 
