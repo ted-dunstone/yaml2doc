@@ -36,6 +36,6 @@ eg:
 yamltodoc test/blueprint.yaml blueprint.pdf 
 ```
 
-# Acknolowegdment
+# Acknowledgement
 
 Derived from [yaml2rst 0.3](https://pypi.org/project/yaml2rst/) which was a yaml to RST converter
