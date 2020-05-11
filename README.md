@@ -12,6 +12,8 @@ Particularly useful for documenting specifications or examples. Features:
 - Through pandoc support allow title,date,author .. 
 - Validates YAML using pyyaml - can insert validation date and status in documentation
 
+Basically your comments in the YAML file can be turned into good looking documentation.
+
 ## Requirements
 
 Relies on the amazing [pandoc](pandoc.org) for the document conversion. It will however run as a pure python yaml to markdown converter without pandoc (as it converts to md and then to pandoc)
