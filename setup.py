@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-from yaml2rst import __version__
+from yaml2doc import __version__
 
 long_description = "\n\n".join([
     open("README.md").read(),
@@ -16,14 +16,14 @@ setup(
     author="Ted Dunstone & Hartmut Goebel",
     author_email='ted@biometix.com',
     license="GPLv3+",
-    packages=['yaml2rst'],
-    url="https://github.com/ted-dunstone/yaml2doc/yaml2rst",
+    packages=['yaml2doc'],
+    url="https://github.com/ted-dunstone/yaml2doc",
     # These are for reference only, pip is not able to download packages
     # from github because the archives do not include the project-name.
     download_url="https://github.com/ted-dunstone/yaml2doc/releases",
     bugtrack_url="https://github.com/ted-dunstone/yaml2doc/issues",
     keywords=['YML', 'YAML',
-              'rst', 'reStructuresText',
+              'md', 'markdown',
               'literate programming'],
     entry_points={
         'console_scripts': [
